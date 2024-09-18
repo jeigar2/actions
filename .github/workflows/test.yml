@@ -22,7 +22,7 @@ jobs:
 
   others:
     runs-on: ubuntu-latest
-
+    needs: [hola]
     steps:
     - name: LS
       run: ls -ltra
