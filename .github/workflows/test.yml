@@ -1,13 +1,13 @@
 name: Hola Mundo
 
-on: 
-  push:
-    branches: 
-      - main
+on: [push, pull_request]
+#  push:
+#    branches: 
+#      - main
 
-  pull_request:
-    branches:
-    - main
+#  pull_request:
+#    branches:
+#    - main
 
 
 jobs:
@@ -36,3 +36,7 @@ jobs:
       uses: actions/checkout@v4.1.7
     - name: LS
       run: ls -ltra
+    - name: install curl
+      run: |
+        chmod +x script.sh
+        ./script.sh
