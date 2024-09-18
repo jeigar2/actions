@@ -2,7 +2,7 @@ name: Hola Mundo
 
 on: [push, pull_request]
 #  push:
-#    branches: 
+#    branches:
 #      - main
 
 #  pull_request:
@@ -34,9 +34,17 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4.1.7
+
     - name: LS
       run: ls -ltra
-    - name: install curl
-      run: |
-        chmod +x script.sh
-        ./script.sh
+
+#    - name: install curl
+#      run: |
+#        chmod +x script.sh
+#        ./script.sh
+
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v4.0.3
+
+    - name: node version
+      run: node --version
