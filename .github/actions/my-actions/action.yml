@@ -1,10 +1,17 @@
 name: "My action"
 description: "Test my action"
 
+#parametro
+inputs:
+  nombre:
+    description: "El nombre de la persona a saludar"
+    required: true
+    default: "Pepe"
+
 runs:
   using: "composite"
 
   steps:
   - name: Hola Mundo
-    run: echo "Hola Mundo"
+    run: echo "Hola ${{ inputs.nombre }}"
     shell: bash

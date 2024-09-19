@@ -37,6 +37,8 @@ jobs:
 
     - name: el action creado
       uses: ./.github/actions/my-actions
+      with:
+        nombre: "Isabel"
 
     - name: LS
       run: ls -ltra
