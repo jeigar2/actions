@@ -21,7 +21,7 @@ jobs:
         env:
           MYSQL_ROOT_PASSWORD: example
         ports:
-          3306:3306
+          - 3306:3306
 
     steps:
     - name: Hola Mundo
