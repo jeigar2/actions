@@ -15,13 +15,14 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    services:
-      mysql:
-        image: mysql:5.7
-        env:
-          MYSQL_ROOT_PASSWORD: example
-        ports:
-          - 3306:3306
+#    services:
+#      mysql:
+#        image: mysql:5.7
+#        env:
+#          MYSQL_ROOT_PASSWORD: example
+#        ports:
+#          - 3306:3306
+
     env:
       MY_VAR: Ejemplo de variable de entorno
 
@@ -33,7 +34,7 @@ jobs:
       run: touch hola.txt
 
     - name: Set text
-      run: echo "Hola Mundo"  >> hola.txt
+      run: echo "Hola Mundo - ${{ secrets.MY_SECRETO_2 }}"  >> hola.txt
 
     - name: Read text
       run: cat hola.txt
