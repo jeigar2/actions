@@ -27,7 +27,7 @@ jobs:
 
     steps:
     - name: Hola Mundo
-      run: echo "Hola Mundo - $MY_VAR - ${{ var.MY_VARIABLE_2 }}"
+      run: echo "Hola Mundo - $MY_VAR - ${{ vars.MY_VARIABLE_2 }}"
 
     - name: touch file
       run: touch hola.txt
