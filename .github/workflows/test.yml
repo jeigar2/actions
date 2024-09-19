@@ -12,6 +12,15 @@ on: [push, pull_request]
 
 jobs:
   hola:
+
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_ROOT_PASSWORD: example
+        ports:
+          3306:3306
+
     runs-on: ubuntu-latest
 
     steps:
