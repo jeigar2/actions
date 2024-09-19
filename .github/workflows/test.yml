@@ -22,10 +22,12 @@ jobs:
           MYSQL_ROOT_PASSWORD: example
         ports:
           - 3306:3306
+    env:
+      MY_VAR: Ejemplo de variable de entorno
 
     steps:
     - name: Hola Mundo
-      run: echo "Hola Mundo"
+      run: echo "Hola Mundo - $MY_VAR - ${{ var.MY_VARIABLE_2 }}"
 
     - name: touch file
       run: touch hola.txt
